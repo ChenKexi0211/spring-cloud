@@ -1,31 +1,25 @@
 
   # spring cloud
- ## 项目模块
-### eureka-server
+
+ ## eureka-server
 </br>服务注册中心 
 </br>含组件:Spring Cloud Eureka
-
-### service-mini-api
+ ## service-mini-api
 </br>服务提供者 
 </br>含组件:Spring Cloud Eureka
-
-### service-feign
+ ## service-feign
 </br>服务消费者-feign调用方式 包含负载均衡、Hystrix断路器 
 </br>含组件:Spring Cloud Feign、Spring Cloud Hystrix
-
-### service-ribbon
+ ## service-ribbon
 </br>服务消费者-ribbon调用方式 包含负载均衡、Hystrix断路器 
 </br>含组件:Spring Cloud Ribbon、Spring Cloud Hystrix
-
-### service-zuul
+ ## service-zuul
 </br>路由网关
 </br>含组件:Spring Cloud Zuul
-
-### config-server
+ ## config-server
 </br>分布式配置中心
 </br>含组件:Spring Cloud Config
-
-### config-client
+ ## config-client
 </br>配置消费者 包含Bus消息总线（需要安装rabbitMq）、actuator监控模块
 </br>含组件:Spring Cloud Config、Spring Cloud Bus
 
