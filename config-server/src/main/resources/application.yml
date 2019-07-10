@@ -17,7 +17,7 @@ spring:
       label: master
       server:
         git:
-          uri: https://github.com/ChenKexi0211/SpringcloudConfig/
+          uri: https://github.com/ChenKexi0211/spring-cloud/
           searchPaths: config
           username:
           password:
