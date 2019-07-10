@@ -1,23 +1,25 @@
-eureka-server:服务注册中心 
-Spring Cloud Eureka
 
-service-mini-api:服务提供者
-Spring Cloud Eureka
+  # spring cloud组件说明
+- eureka-server:服务注册中心 
+</br>Spring Cloud Eureka
 
-service-feign:服务消费者-feign调用方式  包含负载均衡、Hystrix断路器   
-Spring Cloud Feign、Spring Cloud Hystrix
+- service-mini-api:服务提供者
+</br>Spring Cloud Eureka
 
-service-ribbon:服务消费者-ribbon调用方式 包含负载均衡、Hystrix断路器  
-Spring Cloud Ribbon、Spring Cloud Hystrix
+- service-feign:服务消费者-feign调用方式  包含负载均衡、Hystrix断路器   
+</br>Spring Cloud Feign、Spring Cloud Hystrix
 
-service-zuul:路由网关
-Spring Cloud Zuul
+- service-ribbon:服务消费者-ribbon调用方式 包含负载均衡、Hystrix断路器  
+</br>Spring Cloud Ribbon、Spring Cloud Hystrix
 
-config-server:分布式配置中心
-Spring Cloud Config
+- service-zuul:路由网关
+</br>Spring Cloud Zuul
 
-config-client:配置消费者 包含Bus消息总线（需要安装rabbitMq）、actuator监控模块
-Spring Cloud Config、Spring Cloud Bus
+- config-server:分布式配置中心
+</br>Spring Cloud Config
+
+- config-client:配置消费者 包含Bus消息总线（需要安装rabbitMq）、actuator监控模块
+</br>Spring Cloud Config、Spring Cloud Bus
 
 
 
