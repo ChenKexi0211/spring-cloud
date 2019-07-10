@@ -1,50 +1,51 @@
 
-  # spring cloud组件说明
-- eureka-server:服务注册中心 
+  # spring cloud
+ ## 项目模块
+### eureka-server:服务注册中心 
 </br>Spring Cloud Eureka
 
-- service-mini-api:服务提供者
+### service-mini-api:服务提供者
 </br>Spring Cloud Eureka
 
-- service-feign:服务消费者-feign调用方式  包含负载均衡、Hystrix断路器   
+### service-feign:服务消费者-feign调用方式  包含负载均衡、Hystrix断路器   
 </br>Spring Cloud Feign、Spring Cloud Hystrix
 
-- service-ribbon:服务消费者-ribbon调用方式 包含负载均衡、Hystrix断路器  
+### service-ribbon:服务消费者-ribbon调用方式 包含负载均衡、Hystrix断路器  
 </br>Spring Cloud Ribbon、Spring Cloud Hystrix
 
-- service-zuul:路由网关
+### service-zuul:路由网关
 </br>Spring Cloud Zuul
 
-- config-server:分布式配置中心
+### config-server:分布式配置中心
 </br>Spring Cloud Config
 
-- config-client:配置消费者 包含Bus消息总线（需要安装rabbitMq）、actuator监控模块
+### config-client:配置消费者 包含Bus消息总线（需要安装rabbitMq）、actuator监控模块
 </br>Spring Cloud Config、Spring Cloud Bus
 
+ ## 组件说明
+
+### Eureka，服务注册中心，特性有失效剔除、服务保护。
+
+### Ribbon，客户端负载均衡，特性有区域亲和、重试机制。
+
+### Feign，声明式服务调用，本质上就是Ribbon+Hystrix
+
+### Hystrix，客户端容错保护，特性有服务降级、服务熔断、请求缓存、请求合并、依赖隔离。
+
+### Zuul，API服务网关，功能有路由分发和过滤。
+
+### Config，分布式配置中心，支持本地仓库、SVN、Git、Jar包内配置等模式，
+
+### Bus，消息总线，配合Config仓库修改的一种Stream实现，
+
+### Sleuth，分布式服务追踪，需要搞清楚TraceID和SpanID以及抽样，如何与ELK整合。
+
+### Stream，消息驱动，有Sink、Source、Processor三种通道，特性有订阅发布、消费组、消息分区。
+
+### Dashboard，Hystrix仪表盘，监控集群模式和单点模式，其中集群模式需要收集器Turbine配合。
 
 
-Eureka，服务注册中心，特性有失效剔除、服务保护。
-
-Ribbon，客户端负载均衡，特性有区域亲和、重试机制。
-
-Feign，声明式服务调用，本质上就是Ribbon+Hystrix
-
-Hystrix，客户端容错保护，特性有服务降级、服务熔断、请求缓存、请求合并、依赖隔离。
-
-Zuul，API服务网关，功能有路由分发和过滤。
-
-Config，分布式配置中心，支持本地仓库、SVN、Git、Jar包内配置等模式，
-
-Bus，消息总线，配合Config仓库修改的一种Stream实现，
-
-Sleuth，分布式服务追踪，需要搞清楚TraceID和SpanID以及抽样，如何与ELK整合。
-
-Stream，消息驱动，有Sink、Source、Processor三种通道，特性有订阅发布、消费组、消息分区。
-
-Dashboard，Hystrix仪表盘，监控集群模式和单点模式，其中集群模式需要收集器Turbine配合。
-
-
-
+ ## 总结
 
 Eureka和Ribbon，是最基础的组件，一个注册服务，一个消费服务。
 
