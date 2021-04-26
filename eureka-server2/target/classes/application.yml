@@ -1,11 +1,11 @@
 server:
-  port: 8761
+  port: 8762
 spring:
   application:
     name: eurka-server
 eureka:
   instance:
-    hostname: node1
+    hostname: node2
     appname : eurka-server
   client:
     #是否将自己注册到Eureka Server,默认为true，由于当前就是server，故而设置成false，表明该服务不会向eureka注册自己的信息
@@ -14,5 +14,5 @@ eureka:
     fetchRegistry: true
     #设置服务注册中心的URL，用于client和server端交流
     serviceUrl:
-      defaultZone: http://node2:8762/eureka/
+      defaultZone: http://node1:8761/eureka/
 

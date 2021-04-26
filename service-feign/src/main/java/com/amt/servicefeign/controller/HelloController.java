@@ -19,7 +19,7 @@ public class HelloController {
 
     @GetMapping(value = "/hi")
     public String sayHi(@RequestParam String name) {
-        return helloService.sayHiFromClientOne( name );
+        return helloService.sayHiFromClientOne(name);
     }
 
 

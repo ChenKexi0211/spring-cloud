@@ -11,18 +11,18 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date: 2019/7/8 15:27
  * @Author ckx
  */
-@FeignClient(value = "mini-api",fallback = HelloServiceImpl.class)
-public interface  HelloService {
+@FeignClient(value = "mini-api", fallback = HelloServiceImpl.class)
+public interface HelloService {
 
     /**
      * 打招呼
      *
-     * @author ckx
      * @param name
      * @return java.lang.String
+     * @author ckx
      * @date 2019/7/8 16:28
      */
-    @RequestMapping(value = "/hi",method = RequestMethod.GET)
+    @RequestMapping(value = "/hi", method = RequestMethod.GET)
     String sayHiFromClientOne(@RequestParam(value = "name") String name);
 }
 
