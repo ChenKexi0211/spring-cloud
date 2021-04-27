@@ -3,9 +3,9 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.amt</groupId>
-    <artifactId>service-feign</artifactId>
+    <artifactId>eurka-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>service-feign</name>
+    <name>eurka-client</name>
     <description>Demo project for Spring Boot</description>
 
     <parent>
@@ -26,6 +26,12 @@
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-openfeign</artifactId>
+        </dependency>
+
+        <!-- HttpClient 实现 -->
+        <dependency>
+            <groupId>io.github.openfeign</groupId>
+            <artifactId>feign-httpclient</artifactId>
         </dependency>
     </dependencies>
 

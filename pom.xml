@@ -26,6 +26,8 @@
         <module>service-zuul</module>
         <module>eureka-server2</module>
         <module>eureka-client2</module>
+        <module>eureka-provider2</module>
+        <module>common-api</module>
     </modules>
 
     <properties>

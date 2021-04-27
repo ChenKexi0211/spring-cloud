@@ -1,20 +1,19 @@
-package com.amt.client;
+package com.amt.provider;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.openfeign.EnableFeignClients;
-
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 /**
  * @Description: 启动类
  * @Date 2019/7/8 16:28
  * @Author ckx
  */
+@EnableEurekaClient
 @SpringBootApplication
-@EnableFeignClients
-public class ServiceClientApplication {
+public class ServerMiniApiApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ServiceClientApplication.class, args);
+        SpringApplication.run(ServerMiniApiApplication.class, args);
     }
 
 }

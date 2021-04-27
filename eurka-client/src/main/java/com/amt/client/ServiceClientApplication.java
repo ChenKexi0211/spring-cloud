@@ -10,6 +10,8 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @Author ckx
  */
 @SpringBootApplication
+//@EnableEurekaClient
+////@EnableDiscoveryClient
 @EnableFeignClients
 public class ServiceClientApplication {
 
