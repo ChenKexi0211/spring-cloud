@@ -20,11 +20,12 @@
         <module>config-server</module>
         <module>config-client</module>
         <module>eureka-server</module>
-        <module>service-feign</module>
-        <module>eureka-client</module>
+        <module>eurka-client</module>
+        <module>eureka-provider-mini-api</module>
         <module>service-ribbon</module>
         <module>service-zuul</module>
         <module>eureka-server2</module>
+        <module>eureka-client2</module>
     </modules>
 
     <properties>

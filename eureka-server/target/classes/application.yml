@@ -5,6 +5,7 @@ spring:
     name: eurka-server
 eureka:
   instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
     hostname: node1
     appname : eurka-server
   client:
@@ -15,4 +16,7 @@ eureka:
     #设置服务注册中心的URL，用于client和server端交流
     serviceUrl:
       defaultZone: http://node2:8762/eureka/
-
+management:
+  endpoint:
+    shutdown:
+      enabled: true
