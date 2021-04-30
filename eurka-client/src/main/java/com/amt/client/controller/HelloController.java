@@ -3,6 +3,7 @@ package com.amt.client.controller;
 import com.amt.client.service.HelloService;
 import com.netflix.discovery.EurekaClient;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,6 +17,8 @@ import java.util.List;
 @RestController
 public class HelloController {
 
+    @Value("${server.port}")
+    String port;
 
     @Autowired
     DiscoveryClient client;
@@ -38,6 +41,14 @@ public class HelloController {
         }
 
         return helloService.sayHiFromClientOne(name);
+    }
+
+
+
+    @ResponseBody
+    @RequestMapping(value = "/map")
+    public String getMap() {
+        return "i am " + port + "  " + helloService.getMap().toString();
     }
 
     @GetMapping("/client")

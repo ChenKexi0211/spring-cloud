@@ -1,6 +1,20 @@
 spring:
   application:
     name: eurka-provider
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+
 server:
   port: 8763
 eureka:
@@ -13,11 +27,3 @@ eureka:
     appname : eurka-provider
     metadata-map:
       ckx: "大家好"
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "*"
-  endpoint:
-    shutdown:
-      enabled: true

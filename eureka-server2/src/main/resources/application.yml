@@ -3,6 +3,20 @@ server:
 spring:
   application:
     name: eurka-server
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+
 eureka:
   instance:
     instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
@@ -16,7 +30,4 @@ eureka:
     #设置服务注册中心的URL，用于client和server端交流
     serviceUrl:
       defaultZone: http://node1:8761/eureka/
-management:
-  endpoint:
-    shutdown:
-      enabled: true
+

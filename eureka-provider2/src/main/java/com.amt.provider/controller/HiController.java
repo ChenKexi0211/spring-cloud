@@ -36,7 +36,7 @@ public class HiController implements DefaultApi {
      */
     @Override
     public Map<String, Object> getMap() {
-        return Collections.singletonMap("ckx","i love you");
+        return Collections.singletonMap("ckx", "i am " + port + ",i love you");
     }
 
     @Override
@@ -48,6 +48,11 @@ public class HiController implements DefaultApi {
     public User postPserson(User user) {
         System.out.println(ToStringBuilder.reflectionToString(user));
         return user;
+    }
+
+    @Override
+    public String getHelloWord() {
+        return "helloWrod";
     }
 
 }

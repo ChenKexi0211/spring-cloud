@@ -1,0 +1,58 @@
+server:
+  port: 8769
+
+spring:
+  application:
+    name: server-zuul
+  #zipkin
+  zipkin:
+    base-url: http://localhost:9411/
+    #采样比例1
+  sleuth:
+    sampler:
+      rate: 1
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+    routes:
+      enabled: true
+
+
+
+#spring:
+#  application:
+#    name: server-zuul
+#  sleuth:
+#    web:
+#    client:
+#      enabled: true
+#    sampler:
+#    probability: 1.0 # 将采样比例设置为 1.0，也就是全部都需要。默认是 0.1
+#  zipkin:
+#    base-url: http://localhost:9411/
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/,http://localhost:8762/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true
+    appname: server-zuul
+
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRul
+  ConnectTimeout: 1000
+  OkToRetryOnAllOperations: false
+
+

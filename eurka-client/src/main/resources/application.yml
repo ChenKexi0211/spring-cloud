@@ -3,25 +3,37 @@ server:
 
 spring:
   application:
-    name: eurka-client
-#
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
-#  instance:
-#    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
-#    prefer-ip-address: true
-#    appname : eurka-clien
+    name: eurka-consumer
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+
 eureka:
   client:
-    #是否将自己注册到Eureka Server,默认为true
-    registerWithEureka: false
-    #是否从eureka server获取注册信息
-    fetchRegistry: true
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true
+    appname: eurka-consumer
+
 provider:
   ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RoundRobinRule
+    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRul
+feign:
+  hystrix:
+    enabled: true
+
 #RandomRule	随机策略	随机选择server
 #RoundRobinRule	轮询策略	按照顺序选择server（ribbon默认策略）
 #RetryRule	重试策略	在一个配置时间段内，当选择server不成功，则一直尝试选择一个可用的server

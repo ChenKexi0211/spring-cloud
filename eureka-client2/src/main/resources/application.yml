@@ -3,22 +3,36 @@ server:
 
 spring:
   application:
-    name: eureka-client2
-#
-#eureka:
-#  client:
-#    serviceUrl:
-#      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
-#  instance:
-#    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
-#    prefer-ip-address: true
-#    appname : eurka-clien
+    name: eurka-consumer
+  boot:
+    admin:
+      client:
+        url: http://localhost:8899
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+      enabled: true
+
 eureka:
   client:
-    #是否将自己注册到Eureka Server,默认为true
-    registerWithEureka: false
-    #是否从eureka server获取注册信息
-    fetchRegistry: true
-provider:
-  ribbon:
-    NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule
+    serviceUrl:
+      defaultZone: http://node1:8761/eureka/,http://node2:8762/eureka/
+  instance:
+    instance-id: ${spring.cloud.client.ip-address}:${spring.application.instance_id:${server.port}}
+    prefer-ip-address: true
+    appname: eurka-consumer
+
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RetryRule
+  ConnectTimeout: 1000
+  OkToRetryOnAllOperations: false
+
+
+feign:
+  hystrix:
+    enabled: true

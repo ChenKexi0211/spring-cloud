@@ -1,5 +1,6 @@
 package com.amt.client.service;
 
+import com.amt.api.DefaultApi;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Date: 2019/7/8 15:27
  * @Author ckx
  */
-@FeignClient(name = "eurka-provider")
-public interface HelloService {
+@FeignClient(name = "eurka-provider",fallbackFactory = UserServiceBackFactory.class)
+public interface HelloService extends DefaultApi {
 
     /**
      * 打招呼
