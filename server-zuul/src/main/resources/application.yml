@@ -50,9 +50,6 @@ eureka:
     prefer-ip-address: true
     appname: server-zuul
 
-ribbon:
-  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRul
-  ConnectTimeout: 1000
-  OkToRetryOnAllOperations: false
+
 
 

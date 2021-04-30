@@ -15,10 +15,9 @@ spring:
   cloud:
     config:
       label: master
+      profile: dev
       server:
         git:
           uri: https://github.com/ChenKexi0211/spring-cloud/
           searchPaths: config
-          username:
-          password:
 

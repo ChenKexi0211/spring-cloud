@@ -1,0 +1,4 @@
+ribbon:
+  NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRul
+  ConnectTimeout: 1000
+  OkToRetryOnAllOperations: false
